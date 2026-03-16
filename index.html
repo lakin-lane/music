@@ -1,64 +1,164 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lakin Lane</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
 
 body{
   margin:0;
-  background:#0a0a0a;
-  color:white;
-  font-family:Arial;
+  background:#0b0e12;
+  font-family:'Special Elite', monospace;
+  color:#d8c98f;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  min-height:100vh;
 }
 
-.container{
-  text-align:center;
-  width:300px;
+/* film grain */
+
+.grain{
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ height:100%;
+ background:url("https://grainy-gradients.vercel.app/noise.svg");
+ opacity:.18;
+ pointer-events:none;
 }
 
-img{
-  width:120px;
-  border-radius:50%;
-  margin-bottom:20px;
+/* card */
+
+.card{
+ width:360px;
+ background:linear-gradient(#11151c,#0b0e12);
+ padding:30px 25px 35px;
+ border-radius:28px;
+ box-shadow:0 20px 60px rgba(0,0,0,.9);
+ text-align:center;
 }
 
-a{
+/* smaller polaroid */
+
+.polaroid{
+  position:relative;
+  width:240px;
+  margin:auto;
+  margin-bottom:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,.8);
+}
+
+.polaroid img{
+  width:100%;
   display:block;
-  padding:14px;
-  margin:10px 0;
-  border:1px solid white;
-  color:white;
+}
+
+/* tape */
+
+.polaroid:before{
+  content:"";
+  width:70px;
+  height:18px;
+  background:rgba(255,240,190,.45);
+  position:absolute;
+  top:-8px;
+  left:50%;
+  transform:translateX(-50%) rotate(-4deg);
+}
+
+/* title */
+
+h1{
+  margin:10px 0 5px;
+  font-size:22px;
+}
+
+.subtitle{
+  opacity:.7;
+  font-size:14px;
+  margin-bottom:25px;
+}
+
+/* links */
+
+.link{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  margin:8px 0;
+  background:#0e1218;
+  border:1px solid #2a2f38;
+  border-radius:14px;
   text-decoration:none;
+  color:#d8c98f;
   transition:.2s;
 }
 
-a:hover{
-  background:white;
-  color:black;
+.link:hover{
+  background:#d8c98f;
+  color:#0b0e12;
+}
+
+/* arrow */
+
+.arrow{
+ opacity:.5;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="grain"></div>
 
-<img src="profile.jpg">
+<div class="card">
 
-<h2>Lakin Lane</h2>
+<div class="polaroid">
+<img src="profile.jpeg">
+</div>
 
-<a href="#">Spotify</a>
-<a href="#">Apple Music</a>
-<a href="#">YouTube</a>
-<a href="#">Instagram</a>
-<a href="#">SoundCloud</a>
+<h1>Lakin Lane</h1>
+
+<a class="link" href="https://open.spotify.com/track/0r3rdBgrW9fpnqQbScITas?si=89258b306316479a">
+<span>Spotify</span>
+<span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://music.apple.com/us/album/loved-single/1884393425">
+<span>Apple Music</span>
+<span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://tidal.com/album/506250139/">
+<span>TIDAL</span>
+<span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://www.youtube.com/watch?v=jbIleZtKuDw">
+<span>YouTube</span>
+<span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://music.youtube.com/watch?v=oJR3BKD2AiA&si=NzJ5-cxd7UAjpNCD">
+<span>YouTube Music</span>
+<span class="arrow">›</span>
+</a>
+
+<a class="link" href="https://music.amazon.com/albums/B0GS6YZD4Q?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_rF2nDggnZN7iUNWi40idmAnVj&trackAsin=B0GS74R35P">
+<span>Amazon Music</span>
+<span class="arrow">›</span>
+</a>
 
 </div>
 
